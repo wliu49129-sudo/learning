@@ -1,4 +1,4 @@
-prefix=/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install
+prefix=/root/ros1_ws/ROS1_Project_Learning/demo04_ws/install
 
 Name: tf04_test
 Description: Description of tf04_test

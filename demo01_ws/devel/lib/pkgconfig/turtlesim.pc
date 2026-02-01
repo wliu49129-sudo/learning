@@ -1,4 +1,4 @@
-prefix=/home/alan/demo01_ws/devel
+prefix=/root/ros1_ws/ROS1_Project_Learning/demo01_ws/devel
 
 Name: turtlesim
 Description: Description of turtlesim

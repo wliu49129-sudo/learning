@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/alan/demo01_ws/devel/lib/helloworld/haha"
-  "/home/alan/demo01_ws/devel/lib/helloworld/haha.pdb"
+  "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/devel/lib/helloworld/haha"
+  "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/devel/lib/helloworld/haha.pdb"
   "CMakeFiles/haha.dir/src/helloworld_c.cpp.o"
 )
 

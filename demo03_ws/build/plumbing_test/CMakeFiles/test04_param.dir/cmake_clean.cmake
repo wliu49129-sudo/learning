@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/devel/lib/plumbing_test/test04_param"
+  "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/devel/lib/plumbing_test/test04_param.pdb"
   "CMakeFiles/test04_param.dir/src/test04_param.cpp.o"
-  "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/devel/lib/plumbing_test/test04_param.pdb"
-  "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/devel/lib/plumbing_test/test04_param"
 )
 
 # Per-language clean rules from dependency scanning.

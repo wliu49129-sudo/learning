@@ -67,14 +67,14 @@ set(urdf01_rviz_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(urdf01_rviz_SOURCE_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo05_ws/src/urdf01_rviz)
-  set(urdf01_rviz_DEVEL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo05_ws/devel)
+  set(urdf01_rviz_SOURCE_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo05_ws/src/urdf01_rviz)
+  set(urdf01_rviz_DEVEL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo05_ws/devel)
   set(urdf01_rviz_INSTALL_PREFIX "")
   set(urdf01_rviz_PREFIX ${urdf01_rviz_DEVEL_PREFIX})
 else()
   set(urdf01_rviz_SOURCE_PREFIX "")
   set(urdf01_rviz_DEVEL_PREFIX "")
-  set(urdf01_rviz_INSTALL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo05_ws/install)
+  set(urdf01_rviz_INSTALL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo05_ws/install)
   set(urdf01_rviz_PREFIX ${urdf01_rviz_INSTALL_PREFIX})
 endif()
 
@@ -118,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND urdf01_rviz_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -146,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND urdf01_rviz_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND urdf01_rviz_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND urdf01_rviz_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -154,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/amovlab-z410/ROS1_Project_Learning/demo05_ws/install/lib;/home/amovlab-z410/ROS1_Project_Learning/demo05_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /root/ros1_ws/ROS1_Project_Learning/demo05_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(urdf01_rviz_LIBRARIES ${urdf01_rviz_LIBRARIES})
 
   _list_append_unique(urdf01_rviz_LIBRARY_DIRS ${${urdf01_rviz_dep}_LIBRARY_DIRS})
-  list(APPEND urdf01_rviz_EXPORTED_TARGETS ${${urdf01_rviz_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(urdf01_rviz_EXPORTED_TARGETS ${${urdf01_rviz_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

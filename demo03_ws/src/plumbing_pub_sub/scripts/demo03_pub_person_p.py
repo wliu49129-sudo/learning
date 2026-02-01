@@ -18,7 +18,7 @@ if __name__=="__main__":
     #4.组织发布逻辑并发布数据
     #4-1.创建Person数据
     p=Person()
-    p.name="奥特曼"
+    p.name="张三"
     p.age=8
     p.height=1.85
     #4-2.创建Rate对象

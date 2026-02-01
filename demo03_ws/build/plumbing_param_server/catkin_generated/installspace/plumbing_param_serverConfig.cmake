@@ -67,14 +67,14 @@ set(plumbing_param_server_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(plumbing_param_server_SOURCE_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/src/plumbing_param_server)
-  set(plumbing_param_server_DEVEL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/devel)
+  set(plumbing_param_server_SOURCE_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/src/plumbing_param_server)
+  set(plumbing_param_server_DEVEL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/devel)
   set(plumbing_param_server_INSTALL_PREFIX "")
   set(plumbing_param_server_PREFIX ${plumbing_param_server_DEVEL_PREFIX})
 else()
   set(plumbing_param_server_SOURCE_PREFIX "")
   set(plumbing_param_server_DEVEL_PREFIX "")
-  set(plumbing_param_server_INSTALL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install)
+  set(plumbing_param_server_INSTALL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/install)
   set(plumbing_param_server_PREFIX ${plumbing_param_server_INSTALL_PREFIX})
 endif()
 
@@ -118,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND plumbing_param_server_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -146,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND plumbing_param_server_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND plumbing_param_server_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND plumbing_param_server_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -154,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /root/ros1_ws/ROS1_Project_Learning/demo03_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(plumbing_param_server_LIBRARIES ${plumbing_param_server_LIBRARIES})
 
   _list_append_unique(plumbing_param_server_LIBRARY_DIRS ${${plumbing_param_server_dep}_LIBRARY_DIRS})
-  list(APPEND plumbing_param_server_EXPORTED_TARGETS ${${plumbing_param_server_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(plumbing_param_server_EXPORTED_TARGETS ${${plumbing_param_server_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

@@ -67,14 +67,14 @@ set(tf01_static_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(tf01_static_SOURCE_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/src/tf01_static)
-  set(tf01_static_DEVEL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/devel)
+  set(tf01_static_SOURCE_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/src/tf01_static)
+  set(tf01_static_DEVEL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/devel)
   set(tf01_static_INSTALL_PREFIX "")
   set(tf01_static_PREFIX ${tf01_static_DEVEL_PREFIX})
 else()
   set(tf01_static_SOURCE_PREFIX "")
   set(tf01_static_DEVEL_PREFIX "")
-  set(tf01_static_INSTALL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install)
+  set(tf01_static_INSTALL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/install)
   set(tf01_static_PREFIX ${tf01_static_INSTALL_PREFIX})
 endif()
 
@@ -118,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND tf01_static_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -146,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND tf01_static_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND tf01_static_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND tf01_static_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -154,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /root/ros1_ws/ROS1_Project_Learning/demo04_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(tf01_static_LIBRARIES ${tf01_static_LIBRARIES})
 
   _list_append_unique(tf01_static_LIBRARY_DIRS ${${tf01_static_dep}_LIBRARY_DIRS})
-  list(APPEND tf01_static_EXPORTED_TARGETS ${${tf01_static_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(tf01_static_EXPORTED_TARGETS ${${tf01_static_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

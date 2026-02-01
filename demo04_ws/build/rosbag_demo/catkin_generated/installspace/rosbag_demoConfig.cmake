@@ -67,14 +67,14 @@ set(rosbag_demo_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rosbag_demo_SOURCE_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/src/rosbag_demo)
-  set(rosbag_demo_DEVEL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/devel)
+  set(rosbag_demo_SOURCE_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/src/rosbag_demo)
+  set(rosbag_demo_DEVEL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/devel)
   set(rosbag_demo_INSTALL_PREFIX "")
   set(rosbag_demo_PREFIX ${rosbag_demo_DEVEL_PREFIX})
 else()
   set(rosbag_demo_SOURCE_PREFIX "")
   set(rosbag_demo_DEVEL_PREFIX "")
-  set(rosbag_demo_INSTALL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install)
+  set(rosbag_demo_INSTALL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo04_ws/install)
   set(rosbag_demo_PREFIX ${rosbag_demo_INSTALL_PREFIX})
 endif()
 
@@ -118,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND rosbag_demo_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -146,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND rosbag_demo_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND rosbag_demo_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND rosbag_demo_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -154,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /root/ros1_ws/ROS1_Project_Learning/demo04_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(rosbag_demo_LIBRARIES ${rosbag_demo_LIBRARIES})
 
   _list_append_unique(rosbag_demo_LIBRARY_DIRS ${${rosbag_demo_dep}_LIBRARY_DIRS})
-  list(APPEND rosbag_demo_EXPORTED_TARGETS ${${rosbag_demo_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(rosbag_demo_EXPORTED_TARGETS ${${rosbag_demo_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

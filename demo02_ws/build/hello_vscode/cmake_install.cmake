@@ -1,8 +1,8 @@
-# Install script for directory: /home/alan/demo02_ws/src/hello_vscode
+# Install script for directory: /root/ros1_ws/ROS1_Project_Learning/demo02_ws/src/hello_vscode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/alan/demo02_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/alan/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscode.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscode.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hello_vscode/cmake" TYPE FILE FILES
-    "/home/alan/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscodeConfig.cmake"
-    "/home/alan/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscodeConfig-version.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscodeConfig.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscodeConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hello_vscode" TYPE FILE FILES "/home/alan/demo02_ws/src/hello_vscode/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hello_vscode" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/src/hello_vscode/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/hello_vscode" TYPE PROGRAM FILES "/home/alan/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscode_p.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/hello_vscode" TYPE PROGRAM FILES "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/build/hello_vscode/catkin_generated/installspace/hello_vscode_p.py")
 endif()
 

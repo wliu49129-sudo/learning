@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/alan/demo02_ws/devel/lib/turtlesim/hello_ws2"
-  "/home/alan/demo02_ws/devel/lib/turtlesim/hello_ws2.pdb"
+  "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/devel/lib/turtlesim/hello_ws2"
+  "/root/ros1_ws/ROS1_Project_Learning/demo02_ws/devel/lib/turtlesim/hello_ws2.pdb"
   "CMakeFiles/hello_ws2.dir/src/hello_ws2.cpp.o"
 )
 

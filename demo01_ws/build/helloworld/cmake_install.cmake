@@ -1,8 +1,8 @@
-# Install script for directory: /home/alan/demo01_ws/src/helloworld
+# Install script for directory: /root/ros1_ws/ROS1_Project_Learning/demo01_ws/src/helloworld
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/alan/demo01_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/alan/demo01_ws/build/helloworld/catkin_generated/installspace/helloworld.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/helloworld/catkin_generated/installspace/helloworld.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/helloworld/cmake" TYPE FILE FILES
-    "/home/alan/demo01_ws/build/helloworld/catkin_generated/installspace/helloworldConfig.cmake"
-    "/home/alan/demo01_ws/build/helloworld/catkin_generated/installspace/helloworldConfig-version.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/helloworld/catkin_generated/installspace/helloworldConfig.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/helloworld/catkin_generated/installspace/helloworldConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/helloworld" TYPE FILE FILES "/home/alan/demo01_ws/src/helloworld/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/helloworld" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/src/helloworld/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/helloworld" TYPE PROGRAM FILES "/home/alan/demo01_ws/build/helloworld/catkin_generated/installspace/helloworld_p.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/helloworld" TYPE PROGRAM FILES "/root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/helloworld/catkin_generated/installspace/helloworld_p.py")
 endif()
 

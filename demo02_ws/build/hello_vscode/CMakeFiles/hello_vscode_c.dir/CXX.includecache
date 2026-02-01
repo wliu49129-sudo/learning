@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/alan/demo02_ws/src/hello_vscode/src/hello_vscode_c.cpp
-ros/ros.h
-/home/alan/demo02_ws/src/hello_vscode/src/ros/ros.h
-
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h
 /opt/ros/noetic/include/ros/ros/forwards.h
@@ -277,7 +273,7 @@ ros/init.h
 /opt/ros/noetic/include/ros/ros/init.h
 common.h
 /opt/ros/noetic/include/ros/common.h
-boost/bind.hpp
+boost/bind/bind.hpp
 -
 xmlrpcpp/XmlRpcValue.h
 -
@@ -323,7 +319,7 @@ ros/message.h
 /opt/ros/noetic/include/ros/ros/message.h
 ros/serialization.h
 /opt/ros/noetic/include/ros/ros/serialization.h
-boost/bind.hpp
+boost/bind/bind.hpp
 -
 boost/thread/mutex.hpp
 -
@@ -400,6 +396,8 @@ ros/datatypes.h
 vector
 -
 map
+-
+memory
 -
 boost/array.hpp
 -
@@ -669,4 +667,8 @@ vector
 -
 time.h
 -
+
+/root/ros1_ws/ROS1_Project_Learning/demo02_ws/src/hello_vscode/src/hello_vscode_c.cpp
+ros/ros.h
+/root/ros1_ws/ROS1_Project_Learning/demo02_ws/src/hello_vscode/src/ros/ros.h
 

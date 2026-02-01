@@ -7,10 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/alan/demo02_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/alan/demo02_ws/devel/lib:$LD_LIBRARY_PATH"
-export PATH='/opt/ros/noetic/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/alan/.local/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/alan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PKG_CONFIG_PATH="/home/alan/demo02_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/alan/demo02_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/alan/demo02_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH='/home/alan/demo02_ws/src:/home/alan/demo01_ws/src:/opt/ros/noetic/share'
+export CMAKE_PREFIX_PATH="/root/ros1_ws/ROS1_Project_Learning/demo02_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD='/root/ros1_ws/ROS1_Project_Learning/demo02_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/root/ros1_ws/ROS1_Project_Learning/demo02_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/root/ros1_ws/ROS1_Project_Learning/demo02_ws/src:$ROS_PACKAGE_PATH"

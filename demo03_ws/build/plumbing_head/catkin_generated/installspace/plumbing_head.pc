@@ -1,4 +1,4 @@
-prefix=/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install
+prefix=/root/ros1_ws/ROS1_Project_Learning/demo03_ws/install
 
 Name: plumbing_head
 Description: Description of plumbing_head

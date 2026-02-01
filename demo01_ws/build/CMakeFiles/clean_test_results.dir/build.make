@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alan/demo01_ws/src
+CMAKE_SOURCE_DIR = /root/ros1_ws/ROS1_Project_Learning/demo01_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alan/demo01_ws/build
+CMAKE_BINARY_DIR = /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/alan/demo01_ws/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/alan/demo01_ws/build/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/alan/demo01_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alan/demo01_ws/src /home/alan/demo01_ws/src /home/alan/demo01_ws/build /home/alan/demo01_ws/build /home/alan/demo01_ws/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ros1_ws/ROS1_Project_Learning/demo01_ws/src /root/ros1_ws/ROS1_Project_Learning/demo01_ws/src /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build /root/ros1_ws/ROS1_Project_Learning/demo01_ws/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

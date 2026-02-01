@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/devel/lib/tf01_static/demo01_static_pub"
+  "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/devel/lib/tf01_static/demo01_static_pub.pdb"
   "CMakeFiles/demo01_static_pub.dir/src/demo01_static_pub.cpp.o"
-  "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/devel/lib/tf01_static/demo01_static_pub.pdb"
-  "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/devel/lib/tf01_static/demo01_static_pub"
 )
 
 # Per-language clean rules from dependency scanning.

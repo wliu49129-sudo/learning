@@ -1,8 +1,8 @@
-# Install script for directory: /home/amovlab-z410/ROS1_Project_Learning/demo04_ws/src/tf03_tfs
+# Install script for directory: /root/ros1_ws/ROS1_Project_Learning/demo04_ws/src/tf03_tfs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfs.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tf03_tfs/cmake" TYPE FILE FILES
-    "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfsConfig.cmake"
-    "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfsConfig-version.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfsConfig.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/build/tf03_tfs/catkin_generated/installspace/tf03_tfsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tf03_tfs" TYPE FILE FILES "/home/amovlab-z410/ROS1_Project_Learning/demo04_ws/src/tf03_tfs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tf03_tfs" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo04_ws/src/tf03_tfs/package.xml")
 endif()
 

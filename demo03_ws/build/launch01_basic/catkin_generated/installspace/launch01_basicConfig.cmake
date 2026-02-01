@@ -67,14 +67,14 @@ set(launch01_basic_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(launch01_basic_SOURCE_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/src/launch01_basic)
-  set(launch01_basic_DEVEL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/devel)
+  set(launch01_basic_SOURCE_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/src/launch01_basic)
+  set(launch01_basic_DEVEL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/devel)
   set(launch01_basic_INSTALL_PREFIX "")
   set(launch01_basic_PREFIX ${launch01_basic_DEVEL_PREFIX})
 else()
   set(launch01_basic_SOURCE_PREFIX "")
   set(launch01_basic_DEVEL_PREFIX "")
-  set(launch01_basic_INSTALL_PREFIX /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install)
+  set(launch01_basic_INSTALL_PREFIX /root/ros1_ws/ROS1_Project_Learning/demo03_ws/install)
   set(launch01_basic_PREFIX ${launch01_basic_INSTALL_PREFIX})
 endif()
 
@@ -118,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND launch01_basic_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -146,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND launch01_basic_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND launch01_basic_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND launch01_basic_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -154,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /root/ros1_ws/ROS1_Project_Learning/demo03_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(launch01_basic_LIBRARIES ${launch01_basic_LIBRARIES})
 
   _list_append_unique(launch01_basic_LIBRARY_DIRS ${${launch01_basic_dep}_LIBRARY_DIRS})
-  list(APPEND launch01_basic_EXPORTED_TARGETS ${${launch01_basic_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(launch01_basic_EXPORTED_TARGETS ${${launch01_basic_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

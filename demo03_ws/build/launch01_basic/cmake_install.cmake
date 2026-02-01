@@ -1,8 +1,8 @@
-# Install script for directory: /home/amovlab-z410/ROS1_Project_Learning/demo03_ws/src/launch01_basic
+# Install script for directory: /root/ros1_ws/ROS1_Project_Learning/demo03_ws/src/launch01_basic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basic.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basic.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launch01_basic/cmake" TYPE FILE FILES
-    "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basicConfig.cmake"
-    "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basicConfig-version.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basicConfig.cmake"
+    "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/build/launch01_basic/catkin_generated/installspace/launch01_basicConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launch01_basic" TYPE FILE FILES "/home/amovlab-z410/ROS1_Project_Learning/demo03_ws/src/launch01_basic/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launch01_basic" TYPE FILE FILES "/root/ros1_ws/ROS1_Project_Learning/demo03_ws/src/launch01_basic/package.xml")
 endif()
 
